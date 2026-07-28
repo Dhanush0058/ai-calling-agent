@@ -5,6 +5,7 @@ from app.schemas.customer import CustomerCreate
 from app.schemas.customer import CustomerUpdate
 from sqlalchemy.exc import IntegrityError
 from fastapi import HTTPException
+from app.core.logger import logger
 
 
 
@@ -21,12 +22,13 @@ class CustomerService:
 ):
 
         try:
-            return self.repository.create(
+            created_customer = self.repository.create(
                 db,
                 customer,
                 current_user.id
             )
-
+            logger.info(f"Customer '{created_customer.name}' created by user {current_user.id}"
+    )
         except IntegrityError:
             raise HTTPException(
                 status_code=409,
@@ -44,7 +46,7 @@ class CustomerService:
     skip: int,
     limit: int,
 ):
-        return self.repository.get_all(
+        result =  self.repository.get_all(
             db,
             current_user.id,
             search,
@@ -54,6 +56,9 @@ class CustomerService:
             skip,
             limit,
         )
+        logger.info(f"User {current_user.id} fetched {result['total']} customers")
+
+        return result
 
     def get_customer_by_id(
     self,
@@ -84,11 +89,15 @@ class CustomerService:
         if customer is None:
             return None
 
-        return self.repository.update(
+        updated_customer =  self.repository.update(
             db,
             customer,
             customer_data,
         )
+        logger.info(
+    f"Customer {updated_customer.id} updated by user {current_user.id}")
+        return updated_customer
+    
     def delete_customer(
     self,
     db: Session,
@@ -106,7 +115,10 @@ class CustomerService:
             return None
 
         self.repository.delete(db, customer)
-
+        logger.info(
+    f"Customer {customer.id} deleted by user {current_user.id}")
+        
         return customer
+    
 
     

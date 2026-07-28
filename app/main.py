@@ -2,12 +2,26 @@ from fastapi import FastAPI
 from app.api.customers import router as customer_router
 from app.api.root import router as root_router
 from app.core.config import settings
+from fastapi import HTTPException
 from app.api.auth import router as auth_router
 from app.api.users import router as users_router
+from app.core.exceptions import (
+    http_exception_handler,
+    general_exception_handler,
+)
 
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION,
+)
+app.add_exception_handler(
+    HTTPException,
+    http_exception_handler,
+)
+
+app.add_exception_handler(
+    Exception,
+    general_exception_handler,
 )
 
 app.include_router(root_router)
