@@ -5,6 +5,8 @@ from app.core.config import settings
 from fastapi import HTTPException
 from app.api.auth import router as auth_router
 from app.api.users import router as users_router
+from app.core.middleware import log_requests
+from starlette.middleware.base import BaseHTTPMiddleware
 from app.core.exceptions import (
     http_exception_handler,
     general_exception_handler,
@@ -22,6 +24,10 @@ app.add_exception_handler(
 app.add_exception_handler(
     Exception,
     general_exception_handler,
+)
+app.add_middleware(
+    BaseHTTPMiddleware,
+    dispatch=log_requests,
 )
 
 app.include_router(root_router)
