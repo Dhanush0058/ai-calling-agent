@@ -44,6 +44,7 @@ class CustomerRepository:
     skip: int,
     limit: int,
 ):
+        
         query = (
             db.query(Customer)
             .filter(Customer.user_id == user_id)
@@ -80,13 +81,21 @@ class CustomerRepository:
             query = query.order_by(
                 desc(column) if descending else asc(column)
             )
+        total = query.count()
 
-        return (
-            query
-            .offset(skip)
-            .limit(limit)
-            .all()
-        )
+        customers = (
+                query
+                .offset(skip)
+                .limit(limit)
+                .all()
+            )
+
+        return {
+            "items": customers,
+            "total": total,
+            "skip": skip,
+            "limit": limit,
+        }
 
 #Getting by ID 
     def get_by_id(

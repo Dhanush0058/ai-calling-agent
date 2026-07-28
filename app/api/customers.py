@@ -11,6 +11,7 @@ from app.schemas.customer import (
     CustomerCreate,
     CustomerResponse,
     CustomerUpdate,
+    CustomerListResponse,
 )
 from app.services.customer_service import CustomerService
 
@@ -36,29 +37,24 @@ def create_customer(
 
 @router.get(
     "",
-    response_model=list[CustomerResponse],
+    response_model=CustomerListResponse,
 )
 def get_customers(
     search: str | None = None,
-    sort: Literal[
-    "name",
-    "-name",
-    "email",
-    "-email"
-    ] | None = None,
+    sort: Literal["name", "-name", "email", "-email"] | None = None,
     skip: int = 0,
     limit: int = 10,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-        return service.get_all_customers(
-            db,
-            current_user,
-            search,
-            sort,
-            skip,
-            limit,
-        )
+    return service.get_all_customers(
+        db,
+        current_user,
+        search,
+        sort,
+        skip,
+        limit,
+    )
 
 @router.get(
     "/{customer_id}",

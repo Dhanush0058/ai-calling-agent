@@ -19,3 +19,8 @@ class CustomerResponse(BaseModel):
 
     model_config = ConfigDict(from_attributes=True)
 
+class CustomerListResponse(BaseModel):
+    items: list[CustomerResponse]
+    total: int
+    skip: int
+    limit: int
