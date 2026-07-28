@@ -40,6 +40,8 @@ class CustomerRepository:
     db: Session,
     user_id: int,
     search: str | None,
+    email: str | None,
+    phone: str | None,
     sort: str | None,
     skip: int,
     limit: int,
@@ -58,6 +60,14 @@ class CustomerRepository:
                     Customer.name.ilike(f"%{search}%"),
                     Customer.email.ilike(f"%{search}%"),
                 )
+            )
+        if email:
+            query = query.filter(
+                Customer.email.ilike(f"%{email}%")
+            )
+        if phone:
+            query = query.filter(
+                Customer.phone.ilike(f"%{phone}%")
             )
 
         # Sorting

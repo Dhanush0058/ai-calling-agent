@@ -41,6 +41,8 @@ def create_customer(
 )
 def get_customers(
     search: str | None = None,
+    email: str | None = None,
+    phone: str | None = None,
     sort: Literal["name", "-name", "email", "-email"] | None = None,
     skip: int = 0,
     limit: int = 10,
@@ -48,13 +50,15 @@ def get_customers(
     current_user: User = Depends(get_current_user),
 ):
     return service.get_all_customers(
-        db,
-        current_user,
-        search,
-        sort,
-        skip,
-        limit,
-    )
+    db,
+    current_user,
+    search,
+    email,
+    phone,
+    sort,
+    skip,
+    limit,
+)
 
 @router.get(
     "/{customer_id}",
