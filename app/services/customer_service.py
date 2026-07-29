@@ -20,7 +20,8 @@ class CustomerService:
     customer: CustomerCreate,
     current_user: User,
 ):
-
+        
+        
         try:
             created_customer = self.repository.create(
                 db,
@@ -29,6 +30,7 @@ class CustomerService:
             )
             logger.info(f"Customer '{created_customer.name}' created by user {current_user.id}"
     )
+            return created_customer
         except IntegrityError:
             raise HTTPException(
                 status_code=409,

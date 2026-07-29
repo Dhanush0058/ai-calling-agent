@@ -69,11 +69,10 @@ class CustomerRepository:
             query = query.filter(
                 Customer.phone.ilike(f"%{phone}%")
             )
-
         # Sorting
-            sort_fields = {
-            "name": Customer.name,
-            "email": Customer.email,
+        sort_fields = {
+        "name": Customer.name,
+        "email": Customer.email,
         }
 
         if sort:

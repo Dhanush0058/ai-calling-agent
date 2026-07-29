@@ -1,6 +1,17 @@
-.venv/
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+.pytest_cache/
+
+# Virtual environment
+.venv/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Environment
 .env
+
+# VS Code
 .vscode/
-.idea/
