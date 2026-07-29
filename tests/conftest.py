@@ -12,18 +12,34 @@ def client():
 
 @pytest.fixture
 def auth_headers(client):
+    unique = uuid.uuid4().hex[:8]
 
-    response = client.post(
+    user = {
+        "name": "Pytest User",
+        "email": f"pytest_{unique}@example.com",
+        "password": "12345678",
+    }
+
+    # Register a fresh user
+    register_response = client.post(
+        "/auth/register",
+        json=user,
+    )
+
+    assert register_response.status_code == 201
+
+    # Login with the newly created user
+    login_response = client.post(
         "/auth/login",
         data={
-            "username": "dhanushr672@example.com",
-            "password": "12345678",
+            "username": user["email"],
+            "password": user["password"],
         },
     )
 
-    assert response.status_code == 200
+    assert login_response.status_code == 200
 
-    token = response.json()["access_token"]
+    token = login_response.json()["access_token"]
 
     return {
         "Authorization": f"Bearer {token}"
