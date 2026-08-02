@@ -20,19 +20,12 @@ depends_on: Union[str, Sequence[str], None] = None
 
 def upgrade() -> None:
     """Upgrade schema."""
-    op.create_table(
-        "calls",
-        sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("customer_id", sa.Integer(), sa.ForeignKey("customers.id"), nullable=False),
-        sa.Column("started_at", sa.DateTime(), nullable=False),
-        sa.Column("ended_at", sa.DateTime(), nullable=True),
-        sa.Column("status", sa.String(length=30), nullable=False, server_default="active"),
-        sa.Column("transcript", sa.Text(), nullable=True),
-        sa.Column("summary", sa.Text(), nullable=True),
-        sa.PrimaryKeyConstraint("id"),
-    )
+    # This revision is a duplicate history entry; the `calls` table is already
+    # created in the prior revision 1694e1913d43.
+    pass
 
 
 def downgrade() -> None:
     """Downgrade schema."""
-    op.drop_table("calls")
+    # No schema change here because the table is managed by the previous revision.
+    pass
