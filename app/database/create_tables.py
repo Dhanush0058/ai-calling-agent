@@ -3,6 +3,7 @@ from app.database.database import engine
 
 from app.models.customer import Customer
 from app.models.user import User
+from app.models.call import Call
 
 print(Base.metadata.tables.keys())
 

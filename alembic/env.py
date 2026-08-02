@@ -2,7 +2,7 @@ from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
-
+from app.models.call import Call
 from alembic import context
 
 # this is the Alembic Config object, which provides
@@ -30,6 +30,7 @@ if config.config_file_name is not None:
 from app.database.base import Base
 from app.models.user import User
 from app.models.customer import Customer
+from app.models.call import Call
 
 target_metadata = Base.metadata
 
