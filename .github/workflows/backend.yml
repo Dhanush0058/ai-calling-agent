@@ -58,8 +58,8 @@ jobs:
 
       - name: Reset test database and run Alembic migrations
         run: |
-          until mysqladmin ping -h 127.0.0.1 -proot --silent; do sleep 1; done
-          mysql -uroot -proot -e "DROP DATABASE IF EXISTS ai_calling_agent; CREATE DATABASE ai_calling_agent;"
+          until mysqladmin ping --protocol=TCP -h 127.0.0.1 -proot --silent; do sleep 1; done
+          mysql --protocol=TCP -h 127.0.0.1 -P 3306 -uroot -proot -e "DROP DATABASE IF EXISTS ai_calling_agent; CREATE DATABASE ai_calling_agent;"
           alembic upgrade head
           alembic current
 
