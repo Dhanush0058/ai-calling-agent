@@ -7,6 +7,7 @@ from app.api.auth import router as auth_router
 from app.api.users import router as users_router
 from app.core.middleware import log_requests
 from app.api.calls import router as call_router
+from app.api.ai import router as ai_router
 from starlette.middleware.base import BaseHTTPMiddleware
 from app.core.exceptions import (
     http_exception_handler,
@@ -36,3 +37,4 @@ app.include_router(customer_router)
 app.include_router(auth_router)
 app.include_router(users_router)
 app.include_router(call_router)
+app.include_router(ai_router)

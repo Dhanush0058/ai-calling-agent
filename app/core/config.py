@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 
+
 load_dotenv()
 
 
@@ -10,8 +11,10 @@ class Settings:
     DEBUG = os.getenv("DEBUG")
     HOST = os.getenv("HOST")
     PORT = os.getenv("PORT")
-
+    
     DATABASE_URL = os.getenv("DATABASE_URL")
+
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 
 settings = Settings()
