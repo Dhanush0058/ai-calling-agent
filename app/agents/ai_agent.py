@@ -1,67 +1,51 @@
-from app.agents.memory import ConversationMemory
-from app.agents.prompt_manager import SYSTEM_PROMPT
+from sqlalchemy.orm import Session
+
 from app.integrations.gemini_client import GeminiClient
-from app.tools.customer_tools import CustomerTools
+from app.memory.memory_service import MemoryService
+from app.tools.tool_executor import ToolExecutor
 
 
 class AIAgent:
 
     def __init__(self):
-        self.memory = ConversationMemory()
         self.llm = GeminiClient()
+        self.memory_service = MemoryService()
 
     def ask(
         self,
-        text,
-        db=None,
+        message: str,
+        db: Session,
+        customer_id: int | None = None,
     ):
+        executor = ToolExecutor(db)
+        tool_result = executor.execute(message, customer_id=customer_id)
 
-        self.memory.add_user(text)
+        memory_context = None
+        if customer_id is not None:
+            memory_context = self.memory_service.get_customer_memory(db, customer_id)
 
-        text_lower = text.lower()
+        if tool_result:
+            prompt = f"""
+You are an AI customer support assistant.
 
-        if db:
-            if "how many customer" in text_lower:
-                count = CustomerTools.customer_count(db)
-                return f"There are {count} customers in the database."
+Customer Memory:
+{memory_context or 'No recent calls found.'}
 
-        context = ""
+Database Result:
+{tool_result}
 
-        # ---------- Tool Calling ----------
-        if db:
+Current Question:
+{message}
+"""
+            return self.llm.chat(prompt)
 
-            customers = CustomerTools.get_all_customers(db)
+        if memory_context:
+            prompt = f"""
+{memory_context}
 
-            if customers:
+Current Question:
+{message}
+"""
+            return self.llm.chat(prompt)
 
-                context = "\nCustomer Database:\n"
-
-                for customer in customers:
-
-                    context += (
-                        f"Name: {customer.name}, "
-                        f"Email: {customer.email}, "
-                        f"Phone: {customer.phone}\n"
-                    )
-
-        # ---------- Prompt ----------
-
-        messages = [
-            {
-                "role": "system",
-                "content": SYSTEM_PROMPT + context
-            }
-        ]
-
-        messages.extend(
-            self.memory.history()
-        )
-
-        answer = self.llm.chat(messages)
-
-        self.memory.add_ai(answer)
-
-        return answer
-
-    def reset(self):
-        self.memory.clear()
+        return self.llm.chat(message)

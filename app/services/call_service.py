@@ -2,6 +2,7 @@ from datetime import datetime
 
 from sqlalchemy.orm import Session
 
+from app.ai.call_processor import CallProcessor
 from app.models.call import Call
 from app.schemas.call import CallCreate, CallEnd
 
@@ -15,7 +16,8 @@ class CallService:
     ):
 
         new_call = Call(
-            customer_id=call.customer_id
+            customer_id=call.customer_id,
+            created_at=datetime.utcnow(),
         )
 
         db.add(new_call)
@@ -38,8 +40,13 @@ class CallService:
         if call is None:
             return None
 
-        call.transcript = call_data.transcript
-        call.summary = call_data.summary
+        processor = CallProcessor()
+        processor.process_call(
+            db=db,
+            call_id=call_id,
+            transcript=call_data.transcript,
+        )
+
         call.status = "completed"
         call.ended_at = datetime.utcnow()
 
