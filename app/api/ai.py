@@ -9,14 +9,14 @@ router = APIRouter(
     tags=["AI"],
 )
 
-gateway = AIGateway()
-
-
 @router.post("/chat")
 def chat(
     message: str,
     db: Session = Depends(get_db),
 ):
+
+    # instantiate gateway lazily to avoid requiring external API keys at import time
+    gateway = AIGateway()
 
     # TODO: replace with authenticated user id when auth is available
     response = gateway.process(
