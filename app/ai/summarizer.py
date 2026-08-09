@@ -1,10 +1,10 @@
-from app.integrations.gemini_client import GeminiClient
+from app.integrations.llm_client import LLMClient
 
 
 class Summarizer:
 
     def __init__(self):
-        self.llm = GeminiClient()
+        self.llm = LLMClient()
 
     def summarize(self, transcript: str) -> str:
         prompt = f"""

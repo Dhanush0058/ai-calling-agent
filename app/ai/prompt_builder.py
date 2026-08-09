@@ -7,6 +7,8 @@ class PromptBuilder:
         tool_result,
     ):
 
+        relevant_calls = context.get("relevant_calls", "No relevant calls found.")
+
         return f"""
 You are an AI Customer Support Executive.
 
@@ -17,6 +19,10 @@ Customer Profile:
 Customer Memory:
 
 {context['memory']}
+
+Relevant Calls:
+
+{relevant_calls}
 
 Tool Result:
 

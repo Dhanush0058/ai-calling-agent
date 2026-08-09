@@ -12,16 +12,21 @@ class ToolExecutor:
         self.router = SemanticIntentRouter
         self.memory_service = MemoryService()
 
-    def execute(self, message: str, customer_id: int | None = None):
+    def execute(
+        self,
+        message: str,
+        user_id: int | None = None,
+        customer_id: int | None = None,
+    ):
 
         intent = self.router.predict(message)
 
         if intent == "CUSTOMER_COUNT":
-            count = CustomerTools.customer_count(self.db)
+            count = CustomerTools.customer_count(self.db, user_id=user_id)
             return f"There are {count} customers in the database."
 
         if intent == "CUSTOMER_LIST":
-            customers = CustomerTools.get_all_customers(self.db)
+            customers = CustomerTools.get_all_customers(self.db, user_id=user_id)
 
             if not customers:
                 return "No customers found."
@@ -41,7 +46,11 @@ class ToolExecutor:
             if name is None:
                 return "Customer not found."
 
-            customer = CustomerTools.get_customer_by_name(self.db, name)
+            customer = CustomerTools.get_customer_by_name(
+                self.db,
+                name,
+                user_id=user_id,
+            )
 
             if customer is None:
                 return "Customer not found."

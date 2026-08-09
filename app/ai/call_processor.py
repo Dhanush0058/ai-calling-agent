@@ -1,9 +1,9 @@
 import uuid
 
-from app.ai.embeddings import Embeddings
+from app.embedding.embedding_service import EmbeddingService
 from app.ai.sentiment import Sentiment
 from app.ai.summarizer import Summarizer
-from app.integrations.gemini_client import GeminiClient
+from app.integrations.llm_client import LLMClient
 from app.tools.call_tools import CallTools
 
 
@@ -21,8 +21,8 @@ class CallProcessor:
     def __init__(self):
         self.summarizer = Summarizer()
         self.sentiment = Sentiment()
-        self.embeddings = Embeddings()
-        self.llm = GeminiClient()
+        self.embeddings = EmbeddingService()
+        self.llm = LLMClient()
 
     def extract_intent(self, summary: str) -> str:
         prompt = f"""
@@ -46,10 +46,10 @@ Choose exactly one label from the following list:
         sentiment_label = self.sentiment.analyze(summary)
         intent_label = self.extract_intent(summary)
 
-        embedding = self.embeddings.embed([summary])[0]
+        embedding_result = self.embeddings.embed([summary])[0]
         embedding_id = self.embeddings.store(
             summary=summary,
-            embedding=embedding,
+            embedding=embedding_result,
             metadata={"call_id": str(call_id)},
         )
 
@@ -69,5 +69,10 @@ Choose exactly one label from the following list:
             "sentiment": sentiment_label,
             "intent": intent_label,
             "embedding_id": embedding_id,
-            "embedding": embedding,
+            "embedding": embedding_result.vector,
+            "embedding_metadata": {
+                "model": embedding_result.model,
+                "provider": embedding_result.provider,
+                "dimensions": embedding_result.dimensions,
+            },
         }

@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from app.integrations.gemini_client import GeminiClient
+from app.integrations.llm_client import LLMClient
 from app.memory.memory_service import MemoryService
 from app.tools.tool_executor import ToolExecutor
 
@@ -8,7 +8,7 @@ from app.tools.tool_executor import ToolExecutor
 class AIAgent:
 
     def __init__(self):
-        self.llm = GeminiClient()
+        self.llm = LLMClient()
         self.memory_service = MemoryService()
 
     def ask(

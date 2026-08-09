@@ -1,21 +1,19 @@
 from sqlalchemy.orm import Session
 
-from app.ai.context_builder import ContextBuilder
-from app.ai.prompt_builder import PromptBuilder
-from app.ai.response_formatter import ResponseFormatter
-from app.integrations.gemini_client import GeminiClient
+from app.rag.rag_service import RAGService
 from app.tools.tool_executor import ToolExecutor
 
 
 class AIGateway:
 
     def __init__(self):
-        self.llm = GeminiClient()
+        pass
 
     def process(
         self,
         message: str,
         db: Session,
+        user_id: int | None = None,
         customer_id: int | None = None,
     ):
 
@@ -23,21 +21,13 @@ class AIGateway:
 
         tool_result = executor.execute(
             message,
-            customer_id,
+            user_id=user_id,
+            customer_id=customer_id,
         )
 
-        context = ContextBuilder(
-            db=db,
-            customer_id=customer_id,
-        ).build()
-
-        prompt = PromptBuilder.build(
-            message=message,
-            context=context,
+        rag_service = RAGService(db=db, customer_id=customer_id)
+        return rag_service.process(
+            question=message,
             tool_result=tool_result,
         )
-
-        response = self.llm.chat(prompt)
-
-        return ResponseFormatter.format(response)
 
