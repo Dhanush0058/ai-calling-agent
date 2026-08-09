@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
 
@@ -25,10 +25,14 @@ class CallTools:
         return call.summary if call else None
 
     @staticmethod
+    def get_call_by_id(db: Session, call_id: int):
+        return db.query(Call).filter(Call.id == call_id).first()
+
+    @staticmethod
     def create_call(db: Session, customer_id: int):
         new_call = Call(
             customer_id=customer_id,
-            created_at=datetime.utcnow(),
+            created_at=datetime.now(timezone.utc),
         )
         db.add(new_call)
         db.commit()

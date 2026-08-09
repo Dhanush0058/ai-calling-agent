@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 from sqlalchemy.orm import Session
 
@@ -12,7 +12,7 @@ class MemoryRetriever:
         self.max_calls = max_calls
 
     def fetch_recent_calls(self, db: Session, customer_id: int):
-        cutoff = datetime.utcnow() - timedelta(days=self.window_days)
+        cutoff = datetime.now(timezone.utc) - timedelta(days=self.window_days)
         return (
             db.query(Call)
             .filter(Call.customer_id == customer_id)

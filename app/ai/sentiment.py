@@ -1,4 +1,4 @@
-from app.integrations.gemini_client import GeminiClient
+from app.integrations.llm_client import LLMClient
 
 
 class Sentiment:
@@ -12,7 +12,7 @@ class Sentiment:
     ]
 
     def __init__(self):
-        self.llm = GeminiClient()
+        self.llm = LLMClient()
 
     def analyze(self, summary: str) -> str:
         prompt = f"""

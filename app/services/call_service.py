@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
 
@@ -17,7 +17,7 @@ class CallService:
 
         new_call = Call(
             customer_id=call.customer_id,
-            created_at=datetime.utcnow(),
+            created_at=datetime.now(timezone.utc),
         )
 
         db.add(new_call)
@@ -48,7 +48,7 @@ class CallService:
         )
 
         call.status = "completed"
-        call.ended_at = datetime.utcnow()
+        call.ended_at = datetime.now(timezone.utc)
 
         db.commit()
         db.refresh(call)

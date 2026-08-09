@@ -1,8 +1,16 @@
-from fastapi.testclient import TestClient
-import pytest
-from app.main import app
+import os
 import random
 import uuid
+
+os.environ.setdefault("DATABASE_URL", "sqlite:///./test_temp.db")
+
+from fastapi.testclient import TestClient
+import pytest
+
+# Ensure tables exist for the test DB before importing the app
+from app.database.create_tables import Base, engine
+Base.metadata.create_all(bind=engine)
+
 from app.main import app
 
 

@@ -1,7 +1,9 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
+from app.core.dependencies import get_current_user
 from app.database.dependencies import get_db
+from app.models.user import User
 from app.ai.gateway import AIGateway
 
 router = APIRouter(
@@ -13,16 +15,15 @@ router = APIRouter(
 def chat(
     message: str,
     db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
 ):
 
-    # instantiate gateway lazily to avoid requiring external API keys at import time
     gateway = AIGateway()
 
-    # TODO: replace with authenticated user id when auth is available
     response = gateway.process(
         message=message,
         db=db,
-        customer_id=None,
+        user_id=current_user.id,
     )
 
     return response

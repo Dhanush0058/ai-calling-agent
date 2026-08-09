@@ -1,0 +1,336 @@
+{
+  "11215acb265c450ca7dd4e1558c25327": {
+    "document_id": "11215acb265c450ca7dd4e1558c25327",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-0\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T03:38:59.822740Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "502be9b897fe4299a339ad1e2506c82e"
+    ]
+  },
+  "f60562885d684d45836c3ffe3c2a6257": {
+    "document_id": "f60562885d684d45836c3ffe3c2a6257",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-1\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T03:40:21.321038Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "84d91cc3732a46f59a675f5b3b7e567c"
+    ]
+  },
+  "18c7a3364ba1494c841dee98d857d4de": {
+    "document_id": "18c7a3364ba1494c841dee98d857d4de",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-2\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T03:41:54.750083Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "d7b5aeae917945478003f947f9129653"
+    ]
+  },
+  "12cccbbe6e904a8592609b2d5b207230": {
+    "document_id": "12cccbbe6e904a8592609b2d5b207230",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-3\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T03:44:49.119872Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "219010d4927b4d32a46014478bb6675d"
+    ]
+  },
+  "29859793662441e78a35f6540682c9f5": {
+    "document_id": "29859793662441e78a35f6540682c9f5",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-4\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T03:52:24.321025Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "33437c5ad9bb4bd6ae5607caf122f921"
+    ]
+  },
+  "d2b909cf3cbc410cb46673fea3ccd85a": {
+    "document_id": "d2b909cf3cbc410cb46673fea3ccd85a",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-5\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T04:06:11.280661Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "844581bd78f84f1e8114788cf442280e"
+    ]
+  },
+  "b4c786698c7a44a8ab914348c530b4ca": {
+    "document_id": "b4c786698c7a44a8ab914348c530b4ca",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-6\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T05:24:08.218554Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "ac4057badcf3488db28844485a3dd829"
+    ]
+  },
+  "f26fdf0233184691bbc3233d23309df3": {
+    "document_id": "f26fdf0233184691bbc3233d23309df3",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-7\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T05:25:25.010009Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "d50a3acb1e7f4ef5a1c0359a4e98b963"
+    ]
+  },
+  "9655efe3a62043fb907d7cdc671bc813": {
+    "document_id": "9655efe3a62043fb907d7cdc671bc813",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-8\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T10:30:36.085814Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "c46bdc19fe554220ad3f38b8a53e74be"
+    ]
+  },
+  "38dda3d1adc44ed78f63760c40605ea1": {
+    "document_id": "38dda3d1adc44ed78f63760c40605ea1",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-9\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T12:38:26.556080Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "a18df00dab3b403084ac2f2bf2570d54"
+    ]
+  },
+  "0bbd05c825b44a4d8b89e92f2b5d78d1": {
+    "document_id": "0bbd05c825b44a4d8b89e92f2b5d78d1",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-10\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T12:47:53.189564Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "c843a7ecc3bd40b88c60f97c4a660c2b"
+    ]
+  },
+  "e3a2c3c710394a789ec85218c3d9dddf": {
+    "document_id": "e3a2c3c710394a789ec85218c3d9dddf",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-11\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-08T12:53:31.969784Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "fb440d67c24144e09bee280dce867186"
+    ]
+  },
+  "c330dd480e5a4ec1807b56cede74576a": {
+    "document_id": "c330dd480e5a4ec1807b56cede74576a",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-12\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T03:23:38.916032Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "ee0f91ba028947219ffde86cb891f1a6"
+    ]
+  },
+  "5f31c72a40684ef69efc2b87a2e8d39e": {
+    "document_id": "5f31c72a40684ef69efc2b87a2e8d39e",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-13\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T03:41:05.716140Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "43e98c9514c24e21b18f39977458be91"
+    ]
+  },
+  "ed79fe394804475788ce816b656cda56": {
+    "document_id": "ed79fe394804475788ce816b656cda56",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-15\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T04:27:58.382505Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "37f093a7233c4f4f9b29d863265fd49c"
+    ]
+  },
+  "9aed3c28bbec4f229de05e2f94d0c48b": {
+    "document_id": "9aed3c28bbec4f229de05e2f94d0c48b",
+    "source": "smoke.txt",
+    "document_name": "smoke.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T04:28:02.377889Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": []
+  },
+  "efedfe07e3e94ea1b8aaeb965d7d1956": {
+    "document_id": "efedfe07e3e94ea1b8aaeb965d7d1956",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-18\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T04:38:56.484822Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "9d8dfae93a264c9f9f5ee49a287e962c"
+    ]
+  },
+  "1e5edb8c6c374e5992c2f57682f0523e": {
+    "document_id": "1e5edb8c6c374e5992c2f57682f0523e",
+    "source": "smoke.txt",
+    "document_name": "smoke.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T04:39:00.026917Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": []
+  },
+  "8a0474fa89994b188bfd6354fa84d96d": {
+    "document_id": "8a0474fa89994b188bfd6354fa84d96d",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-19\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T05:12:38.872495Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "b314f19840174b57b01c943bbf736789"
+    ]
+  },
+  "c865181550ed4b27ac42509ad360ab29": {
+    "document_id": "c865181550ed4b27ac42509ad360ab29",
+    "source": "smoke.txt",
+    "document_name": "smoke.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T05:12:42.236821Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "553f5db62633455c992df5d87c0d4216"
+    ]
+  },
+  "981579e69be64fc99ba7004792e3c586": {
+    "document_id": "981579e69be64fc99ba7004792e3c586",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-20\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T05:16:22.681161Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "57daadf7fbbf4585831ebd30e4c08748"
+    ]
+  },
+  "540866412eae48899d87acf9a98e7d1b": {
+    "document_id": "540866412eae48899d87acf9a98e7d1b",
+    "source": "smoke.txt",
+    "document_name": "smoke.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T05:16:24.681062Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "beb2f0044b2f42b1886f7533230acd88"
+    ]
+  },
+  "2d8691c50e4b4004b5f84ea08aafd59c": {
+    "document_id": "2d8691c50e4b4004b5f84ea08aafd59c",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-21\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T05:20:16.643102Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "e30461c2a6ec472e90bf7734e03081cf"
+    ]
+  },
+  "d680061c629e42f8829ce27be16586a7": {
+    "document_id": "d680061c629e42f8829ce27be16586a7",
+    "source": "smoke.txt",
+    "document_name": "smoke.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T05:20:18.970770Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "538fcadb9d91474da2387c4b546c1a1e"
+    ]
+  },
+  "11984a7eba8448a281a2843762dffd27": {
+    "document_id": "11984a7eba8448a281a2843762dffd27",
+    "source": "C:\\Users\\dhanu\\AppData\\Local\\Temp\\pytest-of-dhanu\\pytest-22\\test_ingest_and_retrieve0\\doc.txt",
+    "document_name": "doc.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T05:27:51.845774Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "5e50eeca68d245089d8a0dc893388373"
+    ]
+  },
+  "706db55094e44cdbb470a30e6ea47811": {
+    "document_id": "706db55094e44cdbb470a30e6ea47811",
+    "source": "smoke.txt",
+    "document_name": "smoke.txt",
+    "document_type": "txt",
+    "category": null,
+    "upload_timestamp": "2026-08-09T05:27:55.211471Z",
+    "page_count": 1,
+    "chunk_count": 1,
+    "point_ids": [
+      "b3ec3b19264f4481b8fed6b22b4c39cc"
+    ]
+  }
+}

@@ -12,7 +12,7 @@ class ContextBuilder:
         self.db = db
         self.customer_id = customer_id
 
-    def build(self):
+    def build(self, relevant_calls: str | None = None):
 
         profile = ProfileService(
             self.db
@@ -20,14 +20,18 @@ class ContextBuilder:
             self.customer_id
         )
 
-        memory = MemoryService(
-            self.db
-        ).get_customer_memory(
-            self.customer_id
+        memory = MemoryService().get_customer_memory(
+            self.db,
+            self.customer_id,
         )
 
-        return {
+        context = {
             "profile": profile,
             "memory": memory,
         }
+
+        if relevant_calls is not None:
+            context["relevant_calls"] = relevant_calls
+
+        return context
 
