@@ -40,11 +40,13 @@ class OpenRouterClient:
         if self.reasoning_enabled:
             payload["reasoning"] = {"enabled": True}
 
-        response = requests.post(self.url, json=payload, headers=headers, timeout=30)
-        response.raise_for_status()
-        data = response.json()
-
-        logger.info("OpenRouter response status=%s", response.status_code)
-
-        # OpenRouter chat completion responses use the OpenAI message format
-        return data["choices"][0]["message"]["content"]
+        try:
+            response = requests.post(self.url, json=payload, headers=headers, timeout=30)
+            response.raise_for_status()
+            data = response.json()
+            logger.info("OpenRouter response status=%s", response.status_code)
+            # OpenRouter chat completion responses use the OpenAI message format
+            return data["choices"][0]["message"]["content"]
+        except Exception as e:
+            logger.error("OpenRouter API call failed: %s", e)
+            return "(openrouter unavailable) I am currently experiencing high demand. Please try again in a moment."
